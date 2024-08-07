@@ -18,7 +18,7 @@ function Get-ManagerName {
 }
 
 # Read the list of users from the existing Excel sheet
-$excelFilePath = "C:\Users\FS142999\Documents\LocalAdmins.xlsx"
+$excelFilePath = "c:\tools\"
 $sheetName = "DomainAccounts"
 $userList = Import-Excel -Path $excelFilePath -WorksheetName $sheetName
 
@@ -56,7 +56,7 @@ foreach ($user in $userList) {
    }
 }
 
-$newExcelPath = "C:\Users\FS142999\Documents\LocalAdmins - Copy.xlsx" # new Excel file path
+$newExcelPath = "c:\tools\" # new Excel file path
 $userDetails | Export-Excel -Path $newExcelPath -WorksheetName $sheetName -ClearSheet
 
 # Display the results
